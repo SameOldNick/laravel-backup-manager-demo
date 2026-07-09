@@ -17,10 +17,16 @@ class BackupDestinationsUiResponder implements BackupDestinationsUiResponderCont
      */
     public function renderBackupDestinationsList(BackupDestinationsListViewData $data)
     {
+        $request = request();
+
         return Inertia::render('backup-manager/destinations', [
             'tab' => 'destinations',
             'action' => 'list',
             'destinations' => $data->backupDestinations,
+            'filters' => [
+                'search' => $request->query('query', ''),
+                'status' => $request->query('status', ''),
+            ],
         ]);
     }
 

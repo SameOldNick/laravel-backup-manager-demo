@@ -21,15 +21,16 @@ const statusOptions = Object.entries(statusFilters).map(([value, label]) => ({
 }));
 
 const DestinationsListContainer: React.FC = () => {
-    const { destinations } = usePage<BackupDestinationsPageListProps>().props;
+    const { destinations, filters } =
+        usePage<BackupDestinationsPageListProps>().props;
 
-    const [status, setStatus] = useState<string | null>(statusOptions[2].value);
-    const [search, setSearch] = useState('');
+    const [status, setStatus] = useState<string | null>(filters.status ?? null);
+    const [search, setSearch] = useState(filters.search ?? '');
 
     const debounceRef = useRef<number | null>(null);
 
     const debouncedRefresh = useCallback(
-        (overrides?: { status?: string; search?: string }) => {
+        (status: string | null, search: string) => {
             if (debounceRef.current) {
                 clearTimeout(debounceRef.current);
             }
@@ -40,14 +41,8 @@ const DestinationsListContainer: React.FC = () => {
                 router.get(
                     backup.destinations.index(),
                     {
-                        status:
-                            (overrides?.status ?? statusKey) !== 'all'
-                                ? (overrides?.status ?? statusKey)
-                                : undefined,
-                        query:
-                            (overrides?.search ?? search).length > 0
-                                ? (overrides?.search ?? search)
-                                : undefined,
+                        status: status !== 'all' ? statusKey : undefined,
+                        query: search.length > 0 ? search : undefined,
                     },
                     {
                         preserveState: true,
@@ -55,29 +50,25 @@ const DestinationsListContainer: React.FC = () => {
                 );
             }, 1000);
         },
-        [status, search],
+        [],
     );
 
     const handleStatusChange = useCallback(
         (e: React.ChangeEvent<HTMLSelectElement>) => {
             setStatus(e.target.value);
 
-            debouncedRefresh({
-                status: e.target.value,
-            });
+            debouncedRefresh(e.target.value, search);
         },
-        [debouncedRefresh],
+        [debouncedRefresh, search],
     );
 
     const handleSearchChange = useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
             setSearch(e.target.value);
 
-            debouncedRefresh({
-                search: e.target.value,
-            });
+            debouncedRefresh(status, e.target.value);
         },
-        [debouncedRefresh],
+        [debouncedRefresh, status],
     );
 
     return (

@@ -47,6 +47,7 @@ export type BackupDestinationsPageProps =
 export type BackupDestinationsPageListProps = {
     destinations: BackupDestination[];
     action: 'list';
+    filters: Filters;
 };
 
 export type BackupDestinationsPageCreateProps = {
