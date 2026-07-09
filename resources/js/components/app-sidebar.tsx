@@ -1,5 +1,3 @@
-import { Link } from '@inertiajs/react';
-import { BookOpen, FolderGit2, HardDrive, LayoutGrid } from 'lucide-react';
 import AppLogo from '@/components/app-logo';
 import { NavFooter } from '@/components/nav-footer';
 import { NavMain } from '@/components/nav-main';
@@ -16,6 +14,8 @@ import {
 import { dashboard } from '@/routes';
 import backup from '@/routes/backup';
 import type { NavItem } from '@/types';
+import { Link } from '@inertiajs/react';
+import { BookOpen, FolderGit2, HardDrive, LayoutGrid } from 'lucide-react';
 
 const mainNavItems: NavItem[] = [
     {
@@ -27,6 +27,16 @@ const mainNavItems: NavItem[] = [
         title: 'Backups',
         href: backup.backups.index(),
         icon: HardDrive,
+    },
+    {
+        title: 'Schedules',
+        href: backup.schedules.index(),
+        icon: FolderGit2,
+    },
+    {
+        title: 'Backup Destinations',
+        href: backup.destinations.index(),
+        icon: BookOpen,
     },
 ];
 

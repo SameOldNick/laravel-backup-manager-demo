@@ -14,8 +14,11 @@
         "laravel/chisel": "^0.1.0",
         "laravel/fortify": "^1.37.2",
         "laravel/framework": "^13.17",
+        "laravel/reverb": "^1.0",
         "laravel/tinker": "^3.0",
-        "laravel/wayfinder": "^0.1.14"
+        "laravel/wayfinder": "^0.1.14",
+        "pusher/pusher-php-server": "^7.2",
+        "sameoldnick/laravel-backup-manager": "^1.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.24",
@@ -53,7 +56,7 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -c \"#93c5fd,#c4b5fd,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"npm run dev\" --names='server,queue,vite'"
+            "yarn dlx concurrently -c \"#93c5fd,#c4b5fd,#fdba74,#a78bfa\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan reverb:start --debug\" \"yarn run dev\" --names='server,queue,reverb,vite'"
         ],
         "lint": [
             "pint --parallel"
