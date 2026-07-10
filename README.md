@@ -2,15 +2,6 @@
 
 A working demonstration of the [Laravel Backup Manager](https://github.com/SameOldNick/laravel-backup-manager) package, built on top of the [Laravel + React Starter Kit](https://github.com/laravel/react-starter-kit). This app showcases real-time backup management with a modern React UI, including scheduled backups, destination management, and live terminal output via WebSockets.
 
-## Features
-
-- 🗄️ **Backup management** — create, list, and download database backups through a clean web interface
-- 📅 **Scheduled backups** — configure and manage recurring backup schedules with cron expression support
-- 🗑️ **Scheduled cleanups** — automatically prune old backups based on configurable retention rules
-- 🖥️ **Live terminal output** — view real-time backup progress in the browser using [xterm.js](https://xtermjs.org/)
-- 🔔 **WebSocket notifications** — receive asynchronous status updates via [Laravel Reverb](https://reverb.laravel.com/)
-- 🗺️ **Destination management** — configure and test backup storage destinations (local, S3, FTP, etc.)
-
 ## Demo
 
 <p align="center" width="100%">
