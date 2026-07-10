@@ -219,22 +219,21 @@ const BackupRow: React.FC<BackupRowProps> = ({
                         <ExternalLink className="h-5 w-5" />
                     </Button>
                     {canDownloadBackup && (
-                        <Link
-                            href={
-                                canDownloadBackup
-                                    ? backupRoutes.backups.download(backup.uuid)
-                                    : undefined
-                            }
+                        <Button
+                            asChild
+                            size="icon"
+                            variant="ghost"
+                            className="cursor-pointer rounded-[50%] bg-green-600/10 text-green-600"
                         >
-                            <Button
-                                asChild
-                                size="icon"
-                                variant="ghost"
-                                className="cursor-pointer rounded-[50%] bg-green-600/10 text-green-600 disabled:bg-slate-300/20 disabled:text-slate-400 dark:disabled:bg-slate-700/40 dark:disabled:text-slate-500"
+                            <Link
+                                href={backupRoutes.backups.download(
+                                    backup.uuid,
+                                )}
+                                target="_blank"
                             >
                                 <Download className="h-5 w-5" />
-                            </Button>
-                        </Link>
+                            </Link>
+                        </Button>
                     )}
                 </div>
             </td>
