@@ -14,7 +14,7 @@ A working demonstration of the [Laravel Backup Manager](https://github.com/SameO
 ## Demo
 
 <p align="center" width="100%">
-<video src="https://github.com/SameOldNick/laravel-backup-manager-demo/raw/refs/heads/main/demo.mp4" width="80%" controls></video>
+<video src="https://github.com/user-attachments/assets/4c3b7457-950b-47c3-b627-41521be53adf" width="80%" autoplay controls></video>
 </p>
 
 ## Tech Stack
