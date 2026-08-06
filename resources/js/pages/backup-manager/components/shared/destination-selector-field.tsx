@@ -3,8 +3,8 @@ import InputError from '@/components/input-error';
 import { Badge } from '@/components/ui/badge';
 import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
-import type { BackupDestination } from '../../../../types';
-import { protocols } from '../../../destinations/constants';
+import type { BackupDestination } from '../../types';
+import { protocols } from '../destinations/constants';
 
 type DestinationSelectorFieldProps = {
     destinations: BackupDestination[];
@@ -45,7 +45,7 @@ const DestinationSelectorField: React.FC<DestinationSelectorFieldProps> = ({
             </div>
 
             {destinations.length === 0 && (
-                <div className="rounded-lg border border-dashed border-amber-300 bg-amber-50/60 p-4 text-sm text-amber-800 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-200">
+                <div className="my-3 rounded-lg border border-dashed border-amber-300 bg-amber-50/60 p-4 text-sm text-amber-800 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-200">
                     No active destinations are available. Create a destination
                     first, then assign it to this schedule.
                 </div>

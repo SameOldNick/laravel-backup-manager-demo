@@ -18,7 +18,7 @@
         "laravel/tinker": "^3.0",
         "laravel/wayfinder": "^0.1.14",
         "pusher/pusher-php-server": "^7.2",
-        "sameoldnick/laravel-backup-manager": "^1.1"
+        "sameoldnick/laravel-backup-manager": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.24",

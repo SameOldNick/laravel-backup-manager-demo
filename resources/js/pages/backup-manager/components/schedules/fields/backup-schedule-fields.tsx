@@ -5,7 +5,7 @@ import { Label } from '@/components/ui/label';
 import type { BackupDestination } from '../../../types';
 import { backupTypes } from '../constants';
 import CronExpressionField from './shared/cron-expression-field';
-import DestinationSelectorField from './shared/destination-selector-field';
+import DestinationSelectorField from '../../shared/destination-selector-field';
 
 interface BackupScheduleFieldsProps {
     defaultValues: {

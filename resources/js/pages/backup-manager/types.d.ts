@@ -64,6 +64,31 @@ export type BackupDestinationsPageEditProps = {
     };
 };
 
+export type BackupMonitorsPageProps =
+    | BackupMonitorsPageListProps
+    | BackupMonitorsPageCreateProps
+    | BackupMonitorsPageEditProps;
+
+export type BackupMonitorsPageListProps = {
+    monitors: BackupMonitor[];
+    action: 'list';
+    filters: {
+        active: boolean | null;
+        query: string;
+    };
+};
+
+export type BackupMonitorsPageCreateProps = {
+    action: 'create';
+    destinations: BackupDestination[];
+};
+
+export type BackupMonitorsPageEditProps = {
+    action: 'edit';
+    monitor: BackupMonitor;
+    destinations: BackupDestination[];
+};
+
 export type BackupSchedulesPageProps =
     | BackupSchedulesPageListProps
     | BackupSchedulesPageCreateProps
@@ -135,6 +160,15 @@ export interface BackupDestination {
     port?: number;
     auth_type: 'password' | 'key';
     username?: string;
+}
+
+export interface BackupMonitor {
+    id: number;
+    is_active: boolean;
+    name: string;
+    filesystem_configurations?: BackupDestination[];
+    maximum_age_in_days?: number;
+    maximum_storage_in_megabytes?: number;
 }
 
 export interface ScheduleShared {
