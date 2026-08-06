@@ -40,7 +40,7 @@ const BackupScheduleFields: React.FC<BackupScheduleFieldsProps> = ({
                     name="name"
                     type="text"
                     placeholder="e.g. Daily Backup"
-                    className="h-10 my-3"
+                    className="my-3 h-10"
                     defaultValue={defaultValues.scheduleName}
                 />
                 <p className="text-xs text-neutral-500 dark:text-neutral-400">
@@ -60,7 +60,7 @@ const BackupScheduleFields: React.FC<BackupScheduleFieldsProps> = ({
                     <select
                         id="type"
                         name="type"
-                        className='my-3 w-full border-input h-10 rounded-md border bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
+                        className="my-3 h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
                         defaultValue={defaultValues.scheduleType}
                     >
                         {Object.entries(backupTypes).map(([key, value]) => (
@@ -105,7 +105,6 @@ const BackupScheduleFields: React.FC<BackupScheduleFieldsProps> = ({
                             name="is_active"
                             type="checkbox"
                             defaultChecked={defaultValues.active}
-
                         />
                     </div>
                 </div>
