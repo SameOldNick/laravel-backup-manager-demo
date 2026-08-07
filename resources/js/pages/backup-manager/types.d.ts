@@ -1,11 +1,5 @@
 import type { BackupType } from './components/backups/constants';
 
-export type TabValue = 'backups' | 'destinations' | 'schedule';
-
-export type BackupManagerPageProps = {
-    tab: TabValue;
-};
-
 export type Filters = {
     status: string;
     search: string;
