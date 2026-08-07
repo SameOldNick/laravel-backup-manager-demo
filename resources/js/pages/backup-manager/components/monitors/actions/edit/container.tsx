@@ -3,7 +3,7 @@ import React from 'react';
 
 import type { BackupMonitorsPageEditProps } from '../../../../types';
 import BackupSectionContainer from '../../../shared/section-container';
-import EditDestinationForm from './form';
+import EditMonitorForm from './form';
 
 const EditMonitorContainer: React.FC = () => {
     const { monitor, enabled } = usePage<BackupMonitorsPageEditProps>().props;
@@ -20,7 +20,7 @@ const EditMonitorContainer: React.FC = () => {
                 </p>
             )}
 
-            {monitor && <EditDestinationForm monitor={monitor} />}
+            {monitor && <EditMonitorForm monitor={monitor} />}
         </BackupSectionContainer>
     );
 };

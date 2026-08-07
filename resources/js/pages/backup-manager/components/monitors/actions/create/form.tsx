@@ -5,7 +5,7 @@ import type { BackupMonitorsPageCreateProps } from '@/pages/backup-manager/types
 import backup from '@/routes/backup';
 import BackupMonitorFields from '../../fields/backup-monitor-fields';
 
-const CreateDestinationForm = () => {
+const CreateMonitorForm = () => {
     const { destinations } = usePage<BackupMonitorsPageCreateProps>().props;
 
     const [selectedDestinationIds, setSelectedDestinationIds] = useState<
@@ -76,4 +76,4 @@ const CreateDestinationForm = () => {
     );
 };
 
-export default CreateDestinationForm;
+export default CreateMonitorForm;

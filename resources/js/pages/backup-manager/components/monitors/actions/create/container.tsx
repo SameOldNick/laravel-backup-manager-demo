@@ -1,6 +1,6 @@
 import BackupSectionContainer from '../../../shared/section-container';
 
-import CreateDestinationForm from './form';
+import CreateMonitorForm from './form';
 
 const CreateMonitorContainer = () => {
     return (
@@ -9,7 +9,7 @@ const CreateMonitorContainer = () => {
             description="Fill in the details below to create a new backup monitor."
             className="px-4 pb-6 sm:px-6"
         >
-            <CreateDestinationForm />
+            <CreateMonitorForm />
         </BackupSectionContainer>
     );
 };
