@@ -56,7 +56,7 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "yarn dlx concurrently -c \"#93c5fd,#c4b5fd,#fdba74,#a78bfa\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan reverb:start --debug\" \"yarn run dev\" --names='server,queue,reverb,vite'"
+            "yarn dlx concurrently -c \"#93c5fd,#c4b5fd,#fdba74,#a78bfa\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=600\" \"php artisan reverb:start --debug\" \"yarn run dev\" --names='server,queue,reverb,vite'"
         ],
         "lint": [
             "pint --parallel"
