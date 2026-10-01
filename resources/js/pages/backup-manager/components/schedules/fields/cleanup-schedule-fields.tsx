@@ -2,20 +2,27 @@ import InputError from '@/components/input-error';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
+import type { BackupDestination } from '../../../types';
 import CronExpressionField from './shared/cron-expression-field';
+import DestinationSelectorField from '../../shared/destination-selector-field';
 
 interface CleanupScheduleFieldsProps {
     defaultValues: {
         scheduleName: string;
         cronExpression: string;
         active: boolean;
+        destinationIds: number[];
     };
     errors: Record<string, string>;
+    destinations: BackupDestination[];
+    onDestinationChange?: (selectedIds: number[]) => void;
 }
 
 const CleanupScheduleFields: React.FC<CleanupScheduleFieldsProps> = ({
     defaultValues,
     errors,
+    destinations,
+    onDestinationChange,
 }) => {
     return (
         <div className="grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-12">
@@ -35,6 +42,15 @@ const CleanupScheduleFields: React.FC<CleanupScheduleFieldsProps> = ({
                     Provide a name to identify this schedule.
                 </p>
                 <InputError message={errors.name} />
+            </div>
+
+            <div className="col-span-12">
+                <DestinationSelectorField
+                    selectedIds={defaultValues.destinationIds}
+                    errors={errors}
+                    destinations={destinations}
+                    onChange={onDestinationChange}
+                />
             </div>
 
             <div className="col-span-12">

@@ -106,6 +106,32 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Jobs
+    |--------------------------------------------------------------------------
+    | Here you can specify the default configuration for each job type.
+     */
+    'jobs' => [
+        'backup' => [
+            'connection' => env('BACKUP_QUEUE_CONNECTION', null),
+            'queue' => env('BACKUP_QUEUE_NAME', null),
+            'group' => env('BACKUP_QUEUE_GROUP', null),
+            'delay' => env('BACKUP_QUEUE_DELAY', null),
+            'middleware' => env('BACKUP_QUEUE_MIDDLEWARE', null),
+            'after_commit' => env('BACKUP_QUEUE_AFTER_COMMIT', null),
+        ],
+
+        'cleanup' => [
+            'connection' => env('CLEANUP_QUEUE_CONNECTION', null),
+            'queue' => env('CLEANUP_QUEUE_NAME', null),
+            'group' => env('CLEANUP_QUEUE_GROUP', null),
+            'delay' => env('CLEANUP_QUEUE_DELAY', null),
+            'middleware' => env('CLEANUP_QUEUE_MIDDLEWARE', null),
+            'after_commit' => env('CLEANUP_QUEUE_AFTER_COMMIT', null),
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Config Fallbacks
     |--------------------------------------------------------------------------
     | Here you can specify the config values that will be used as fallbacks when the database

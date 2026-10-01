@@ -4,6 +4,7 @@ namespace App\BackupManager\Responders;
 
 use Inertia\Inertia;
 use SameOldNick\BackupManager\Contracts\Responders\CleanupSchedulesUiResponder as CleanupSchedulesUiResponderContract;
+use SameOldNick\BackupManager\DataTransferObjects\Responders\Schedules\CleanupSchedules\CreateCleanupScheduleViewData;
 use SameOldNick\BackupManager\DataTransferObjects\Responders\Schedules\CleanupSchedules\DestroyCleanupScheduleViewData;
 use SameOldNick\BackupManager\DataTransferObjects\Responders\Schedules\CleanupSchedules\EditCleanupScheduleViewData;
 use SameOldNick\BackupManager\DataTransferObjects\Responders\Schedules\CleanupSchedules\StoreCleanupScheduleViewData;
@@ -14,11 +15,12 @@ class CleanupSchedulesUiResponder implements CleanupSchedulesUiResponderContract
     /**
      * {@inheritDoc}
      */
-    public function renderCreateCleanupSchedule()
+    public function renderCreateCleanupSchedule(CreateCleanupScheduleViewData $data)
     {
         return Inertia::render('backup-manager/schedules', [
             'tab' => 'schedule',
             'action' => 'create:cleanup',
+            'destinations' => $data->configurations,
         ]);
     }
 
@@ -40,7 +42,11 @@ class CleanupSchedulesUiResponder implements CleanupSchedulesUiResponderContract
         return Inertia::render('backup-manager/schedules', [
             'tab' => 'schedule',
             'action' => 'edit:cleanup',
-            'schedule' => $data->schedule,
+            'schedule' => [
+                ...$data->schedule->toArray(),
+                'destination_ids' => $data->selectedDestinationIds,
+            ],
+            'destinations' => $data->configurations,
         ]);
     }
 
