@@ -103,6 +103,7 @@ export type BackupSchedulesPageCreateProps = {
 
 export type CleanupSchedulesPageCreateProps = {
     action: 'create:cleanup';
+    destinations: BackupDestination[];
 };
 
 export type BackupSchedulesPageEditProps = {
@@ -114,6 +115,7 @@ export type BackupSchedulesPageEditProps = {
 export type CleanupSchedulesPageEditProps = {
     action: 'edit:cleanup';
     schedule: CleanupSchedule;
+    destinations: BackupDestination[];
 };
 
 export interface FileMeta {
@@ -181,4 +183,7 @@ export interface BackupSchedule extends ScheduleShared {
     filesystem_configurations?: BackupDestination[];
 }
 
-export type CleanupSchedule = ScheduleShared;
+export interface CleanupSchedule extends ScheduleShared {
+    destination_ids?: number[];
+    filesystem_configurations?: BackupDestination[];
+}

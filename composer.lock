@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ab25c3c3c6a8e05c6967de428232c8a",
+    "content-hash": "1e8a0db50a12aeb56b5dc7029e82bd13",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -5463,20 +5463,20 @@
         },
         {
             "name": "sameoldnick/laravel-backup-manager",
-            "version": "v2.0.2",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SameOldNick/laravel-backup-manager.git",
-                "reference": "f963a4ad598d3a7646403004d128cafbaf675828"
+                "reference": "aaf0ed0bca3d338383827e29fc4a1847126532ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SameOldNick/laravel-backup-manager/zipball/f963a4ad598d3a7646403004d128cafbaf675828",
-                "reference": "f963a4ad598d3a7646403004d128cafbaf675828",
+                "url": "https://api.github.com/repos/SameOldNick/laravel-backup-manager/zipball/aaf0ed0bca3d338383827e29fc4a1847126532ab",
+                "reference": "aaf0ed0bca3d338383827e29fc4a1847126532ab",
                 "shasum": ""
             },
             "require": {
-                "dragonmantank/cron-expression": "*",
+                "dragonmantank/cron-expression": "^3.6",
                 "ifsnop/mysqldump-php": "^2.12",
                 "illuminate/contracts": "^11.0||^12.0||^13.0",
                 "laravel/socialite": "^5.27",
@@ -5539,9 +5539,9 @@
             ],
             "support": {
                 "issues": "https://github.com/SameOldNick/laravel-backup-manager/issues",
-                "source": "https://github.com/SameOldNick/laravel-backup-manager/tree/v2.0.2"
+                "source": "https://github.com/SameOldNick/laravel-backup-manager/tree/v3.0.0"
             },
-            "time": "2026-08-12T06:13:38+00:00"
+            "time": "2026-10-01T18:16:55+00:00"
         },
         {
             "name": "spatie/db-dumper",
@@ -13315,7 +13315,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.3"
+        "php": "^8.4"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"

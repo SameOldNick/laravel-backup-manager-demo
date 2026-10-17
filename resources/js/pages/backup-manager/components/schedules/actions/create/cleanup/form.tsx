@@ -1,10 +1,21 @@
 import { router, Form } from '@inertiajs/react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import backup from '@/routes/backup';
+import type { BackupDestination } from '../../../../../types';
 import CleanupScheduleFields from '../../../fields/cleanup-schedule-fields';
 
-const CreateCleanupScheduleForm = () => {
+const CreateCleanupScheduleForm = ({
+    destinations,
+}: {
+    destinations: BackupDestination[];
+}) => {
+    const [selectedDestinationIds, setSelectedDestinationIds] = useState<
+        number[]
+    >([]);
+
     const transformFormData = (data: Record<string, any>) => {
+        data['destination_ids'] = selectedDestinationIds;
         data['is_active'] = data['is_active'] ? 1 : 0;
 
         return data;
@@ -25,8 +36,11 @@ const CreateCleanupScheduleForm = () => {
                                 active: true,
                                 scheduleName: '',
                                 cronExpression: '',
+                                destinationIds: selectedDestinationIds,
                             }}
                             errors={errors}
+                            destinations={destinations}
+                            onDestinationChange={setSelectedDestinationIds}
                         />
 
                         <div className="flex items-center justify-end gap-3 border-t border-neutral-200 pt-6 dark:border-neutral-700">
