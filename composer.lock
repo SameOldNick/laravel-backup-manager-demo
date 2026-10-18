@@ -1262,16 +1262,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.13.1",
+            "version": "2.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "95e7828100de18b4e269fb1703be530082d5166d"
+                "reference": "adee536f95101929f262b8c59e8a61472f347d58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/95e7828100de18b4e269fb1703be530082d5166d",
-                "reference": "95e7828100de18b4e269fb1703be530082d5166d",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/adee536f95101929f262b8c59e8a61472f347d58",
+                "reference": "adee536f95101929f262b8c59e8a61472f347d58",
                 "shasum": ""
             },
             "require": {
@@ -1361,7 +1361,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.13.1"
+                "source": "https://github.com/guzzle/psr7/tree/2.13.2"
             },
             "funding": [
                 {
@@ -1377,7 +1377,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-24T09:13:11+00:00"
+            "time": "2026-10-17T23:49:46+00:00"
         },
         {
             "name": "guzzlehttp/uri-template",
@@ -5464,16 +5464,16 @@
         },
         {
             "name": "sameoldnick/laravel-backup-manager",
-            "version": "v3.1.0",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SameOldNick/laravel-backup-manager.git",
-                "reference": "5115fe1d04349af3dd46f14d490e1ba74e96a4c5"
+                "reference": "86ceb91edda7276b15c8661173be8d9a731cb803"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SameOldNick/laravel-backup-manager/zipball/5115fe1d04349af3dd46f14d490e1ba74e96a4c5",
-                "reference": "5115fe1d04349af3dd46f14d490e1ba74e96a4c5",
+                "url": "https://api.github.com/repos/SameOldNick/laravel-backup-manager/zipball/86ceb91edda7276b15c8661173be8d9a731cb803",
+                "reference": "86ceb91edda7276b15c8661173be8d9a731cb803",
                 "shasum": ""
             },
             "require": {
@@ -5540,9 +5540,9 @@
             ],
             "support": {
                 "issues": "https://github.com/SameOldNick/laravel-backup-manager/issues",
-                "source": "https://github.com/SameOldNick/laravel-backup-manager/tree/v3.1.0"
+                "source": "https://github.com/SameOldNick/laravel-backup-manager/tree/v3.1.1"
             },
-            "time": "2026-10-17T21:05:08+00:00"
+            "time": "2026-10-18T00:16:40+00:00"
         },
         {
             "name": "spatie/db-dumper",
